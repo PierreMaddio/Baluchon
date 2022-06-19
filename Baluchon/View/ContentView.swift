@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            CurrencyView()
+            CurrencyView(viewModel: .init(service: CurrencyService()))
                 .tabItem {
                     Image(systemName: "banknote")
                     Text("Currency")

@@ -22,6 +22,7 @@
 		FA8F0F54285F9D0600967BDD /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F53285F9D0600967BDD /* LoaderView.swift */; };
 		FA8F0F56285FA01D00967BDD /* CurrencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F55285FA01D00967BDD /* CurrencyService.swift */; };
 		FA8F0F58285FA03F00967BDD /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F57285FA03F00967BDD /* Currency.swift */; };
+		FA8F0F5A285FA13300967BDD /* CurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F59285FA13300967BDD /* CurrencyViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		FA8F0F53285F9D0600967BDD /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		FA8F0F55285FA01D00967BDD /* CurrencyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyService.swift; sourceTree = "<group>"; };
 		FA8F0F57285FA03F00967BDD /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		FA8F0F59285FA13300967BDD /* CurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 		FA8F0F4B285F9AD800967BDD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FA8F0F59285FA13300967BDD /* CurrencyViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA8F0F1B285F97F700967BDD /* ContentView.swift in Sources */,
+				FA8F0F5A285FA13300967BDD /* CurrencyViewModel.swift in Sources */,
 				FA8F0F50285F9CA300967BDD /* TranslateView.swift in Sources */,
 				FA8F0F56285FA01D00967BDD /* CurrencyService.swift in Sources */,
 				FA8F0F4E285F9C8600967BDD /* CurrencyView.swift in Sources */,
