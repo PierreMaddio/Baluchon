@@ -53,6 +53,10 @@ struct CurrencyView: View {
                             Button("Convert") {
                                 convertData()
                             }
+                            .padding()
+                            .background(Color(red: 0, green: 0, blue: 0.5))
+                            .clipShape(Capsule())
+                            
                         }
                         .navigationTitle(Text("Currency"))
                         .foregroundColor(Color.blue)

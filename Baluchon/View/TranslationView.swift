@@ -26,11 +26,16 @@ struct TranslationView: View {
                         .frame(minWidth: 100, maxWidth: 200, minHeight: 100, maxHeight: .infinity, alignment: .topLeading)
                         .keyboardType(.default)
                 }
+                
                 Button("Translate") {
                     if !textToTranslate.isEmpty {
                         viewModel.fetchDataForTranslation(target: "en", q: textToTranslate)
                     }
                 }
+                .padding()
+                .background(Color(red: 0, green: 0, blue: 0.5))
+                .clipShape(Capsule())
+                
                 Section(header: Text("Translation")) {
                     TextField("Translation in english", text: $viewModel.result)
                         .lineLimit(4)

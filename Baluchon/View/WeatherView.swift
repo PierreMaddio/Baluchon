@@ -41,7 +41,8 @@ struct WeatherView: View {
                                         .font(.system(size: 40))
                                 }
                                 .frame(width: 150, alignment: .leading)
-                                Text($viewModel.cityTemperatureDestination.wrappedValue)
+                                Text(String(format: "%0.f", $viewModel.cityTemperatureDestination.wrappedValue) + "°")
+
                                     .font(.system(size: 40))
                                     .fontWeight(.bold)
                                     .padding()
@@ -49,9 +50,10 @@ struct WeatherView: View {
                         }
                         .padding()
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .background(Color(.orange))
+                        .background(Color(.lightGray))
                         Spacer(minLength: 15)
                     }
+                    
                     
                     Spacer()
                     
@@ -59,9 +61,13 @@ struct WeatherView: View {
                         fetchDataForNewYork()
                         fetchDataForParis()
                     }
+                    .padding()
+                    .background(Color(red: 0, green: 0, blue: 0.5))
+                    .clipShape(Capsule())
                     
                     Spacer()
 
+                    
                     HStack {
                         Spacer(minLength: 15)
                         VStack {
@@ -79,7 +85,7 @@ struct WeatherView: View {
                                         .font(.system(size: 40))
                                 }
                                 .frame(width: 150, alignment: .leading)
-                                Text($viewModel.cityTemperatureOrigin.wrappedValue)
+                                Text(String(format: "%0.f", $viewModel.cityTemperatureOrigin.wrappedValue) + "°")
                                     .font(.system(size: 40))
                                     .fontWeight(.bold)
                                     .padding()
@@ -87,11 +93,12 @@ struct WeatherView: View {
                         }
                         .padding()
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .background(Color(.green))
+                        .background(Color(.lightGray))
                         Spacer(minLength: 15)
                     }
                     Spacer()
                 }
+                .foregroundColor(.blue)
                 .navigationTitle(Text("Weather"))
             }
         }.onAppear {
@@ -103,7 +110,7 @@ struct WeatherView: View {
     func fetchDataForNewYork() {
         viewModel.fetchDataForCityDestination(lat: "40.7127281", lon: "-74.0060152")
     }
-
+    
     func fetchDataForParis() {
         viewModel.fetchDataForCityOrigin(lat: "48.8534100", lon: "2.3488000")
     }
@@ -114,3 +121,4 @@ struct WeatherView_Previews: PreviewProvider {
         WeatherView(viewModel: .init(service: WeatherService()))
     }
 }
+

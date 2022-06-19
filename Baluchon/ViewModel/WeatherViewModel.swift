@@ -11,10 +11,10 @@ class WeatherViewModel: ObservableObject {
     @Published var loaderIsVisible: Bool = false
     @Published var loaderIsError: Bool = false
     @Published var cityNameDestination: String = ""
-    @Published var cityTemperatureDestination: String = ""
+    @Published var cityTemperatureDestination: Double = 0.0
     @Published var cityWeatherDescriptionDestination: String = ""
     @Published var cityNameOrigin: String = ""
-    @Published var cityTemperatureOrigin: String = ""
+    @Published var cityTemperatureOrigin: Double = 0.0
     @Published var cityWeatherDescriptionOrigin: String = ""
     
     // service
@@ -25,7 +25,7 @@ class WeatherViewModel: ObservableObject {
         self.service = service as? WeatherServiceProtocol
     }
     
-    private func fetchDataForCity(lat: String, lon: String, handler: @escaping (String,String, String)-> (Void) ) {
+    private func fetchDataForCity(lat: String, lon: String, handler: @escaping (String, Double, String)-> (Void) ) {
         loaderIsVisible = true
         self.service?.getWeather(lat: lat, lon: lon, completion: { weatherData in
             if let cityName = weatherData?.name,
@@ -34,7 +34,7 @@ class WeatherViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.loaderIsVisible = false
                     self.loaderIsError = false
-                    handler(cityName,"\(cityTemperature )", cityWeatherDescription)
+                    handler(cityName, cityTemperature, cityWeatherDescription)
                 }
             } else {
                 self.loaderIsError = true
@@ -45,7 +45,7 @@ class WeatherViewModel: ObservableObject {
     func fetchDataForCityDestination(lat: String, lon: String) {
         self.fetchDataForCity(lat: lat, lon: lon) { cityName, cityTemperature, cityWeatherDescription in
             self.cityNameDestination = cityName
-            self.cityTemperatureDestination = cityTemperature
+            self.cityTemperatureDestination = self.kelvinsToCelsius(temperature: cityTemperature) 
             self.cityWeatherDescriptionDestination = cityWeatherDescription
         }
     }
@@ -53,8 +53,15 @@ class WeatherViewModel: ObservableObject {
     func fetchDataForCityOrigin(lat: String, lon: String) {
         self.fetchDataForCity(lat: lat, lon: lon) { cityName, cityTemperature, cityWeatherDescription in
             self.cityNameOrigin = cityName
-            self.cityTemperatureOrigin = cityTemperature
+            self.cityTemperatureOrigin = self.kelvinsToCelsius(temperature: cityTemperature)
             self.cityWeatherDescriptionOrigin = cityWeatherDescription
         }
     }
+    
+    func kelvinsToCelsius(temperature: Double) -> Double {
+        let conversion = temperature - 273.15
+        let aroundConversion = conversion.rounded()
+        return aroundConversion
+    }
+
 }
