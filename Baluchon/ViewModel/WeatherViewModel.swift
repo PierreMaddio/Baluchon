@@ -19,10 +19,9 @@ class WeatherViewModel: ObservableObject {
     
     // service
     let service: WeatherServiceProtocol?
-
+    
     // Inject service weather
     init(service: Service) {
-        
         self.service = service as? WeatherServiceProtocol
     }
     
@@ -39,7 +38,7 @@ class WeatherViewModel: ObservableObject {
                 }
             } else {
                 self.loaderIsError = true
-                }
+            }
         })
     }
     
@@ -58,5 +57,4 @@ class WeatherViewModel: ObservableObject {
             self.cityWeatherDescriptionOrigin = cityWeatherDescription
         }
     }
-    
 }

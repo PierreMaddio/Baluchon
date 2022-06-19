@@ -20,7 +20,7 @@ struct ContentView: View {
                     Image(systemName: "person.2")
                     Text("Translate")
                 }
-            WeatherView()
+            WeatherView(viewModel: .init(service: WeatherService()))
                 .tabItem {
                     Image(systemName: "cloud.sun.fill")
                     Text("Weather")
