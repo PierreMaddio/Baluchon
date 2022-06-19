@@ -24,6 +24,8 @@
 		FA8F0F58285FA03F00967BDD /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F57285FA03F00967BDD /* Currency.swift */; };
 		FA8F0F5A285FA13300967BDD /* CurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F59285FA13300967BDD /* CurrencyViewModel.swift */; };
 		FA8F0F5C285FA4A000967BDD /* CurrencyViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F5B285FA4A000967BDD /* CurrencyViewModelTests.swift */; };
+		FA8F0F5E285FA64400967BDD /* TranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F5D285FA64400967BDD /* TranslationService.swift */; };
+		FA8F0F60285FA66C00967BDD /* Translation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F5F285FA66C00967BDD /* Translation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		FA8F0F57285FA03F00967BDD /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		FA8F0F59285FA13300967BDD /* CurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModel.swift; sourceTree = "<group>"; };
 		FA8F0F5B285FA4A000967BDD /* CurrencyViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModelTests.swift; sourceTree = "<group>"; };
+		FA8F0F5D285FA64400967BDD /* TranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationService.swift; sourceTree = "<group>"; };
+		FA8F0F5F285FA66C00967BDD /* Translation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				FA8F0F55285FA01D00967BDD /* CurrencyService.swift */,
+				FA8F0F5D285FA64400967BDD /* TranslationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				FA8F0F57285FA03F00967BDD /* Currency.swift */,
+				FA8F0F5F285FA66C00967BDD /* Translation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -348,12 +354,14 @@
 				FA8F0F50285F9CA300967BDD /* TranslateView.swift in Sources */,
 				FA8F0F56285FA01D00967BDD /* CurrencyService.swift in Sources */,
 				FA8F0F4E285F9C8600967BDD /* CurrencyView.swift in Sources */,
+				FA8F0F60285FA66C00967BDD /* Translation.swift in Sources */,
 				FA8F0F47285F9A8000967BDD /* Service.swift in Sources */,
 				FA8F0F19285F97F700967BDD /* BaluchonApp.swift in Sources */,
 				FA8F0F58285FA03F00967BDD /* Currency.swift in Sources */,
 				FA8F0F54285F9D0600967BDD /* LoaderView.swift in Sources */,
 				FA8F0F52285F9CBC00967BDD /* WeatherView.swift in Sources */,
 				FA8F0F45285F9A4F00967BDD /* ApiService.swift in Sources */,
+				FA8F0F5E285FA64400967BDD /* TranslationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
