@@ -15,7 +15,7 @@ struct ContentView: View {
                     Image(systemName: "banknote")
                     Text("Currency")
                 }
-            TranslateView()
+            TranslationView(viewModel: .init(service: TranslationService()))
                 .tabItem {
                     Image(systemName: "person.2")
                     Text("Translate")

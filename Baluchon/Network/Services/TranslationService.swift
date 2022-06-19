@@ -11,7 +11,7 @@ protocol TranslationServiceProtocol: Service {
     func getTranslation(target: String, q: String, completion: @escaping (Translation?) -> (Void))
 }
 
-class TranslateService: ApiService, TranslationServiceProtocol {
+class TranslationService: ApiService, TranslationServiceProtocol {
     
     func getTranslation(target: String, q: String, completion: @escaping (Translation?) -> (Void)) {
         let urlPathStr = Path.BaseUrl.GoogleTranslate.path.rawValue + "?" + Path.Params.GoogleTranslate.target.rawValue + "=" + target + "&" + Path.Params.GoogleTranslate.q.rawValue + "=" + q + "&" + Constants.keyGoogle + "=" + Constants.apiGoogleTranslate

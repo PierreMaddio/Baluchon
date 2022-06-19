@@ -17,7 +17,6 @@
 		FA8F0F45285F9A4F00967BDD /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F44285F9A4F00967BDD /* ApiService.swift */; };
 		FA8F0F47285F9A8000967BDD /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F46285F9A8000967BDD /* Service.swift */; };
 		FA8F0F4E285F9C8600967BDD /* CurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F4D285F9C8600967BDD /* CurrencyView.swift */; };
-		FA8F0F50285F9CA300967BDD /* TranslateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F4F285F9CA300967BDD /* TranslateView.swift */; };
 		FA8F0F52285F9CBC00967BDD /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F51285F9CBC00967BDD /* WeatherView.swift */; };
 		FA8F0F54285F9D0600967BDD /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F53285F9D0600967BDD /* LoaderView.swift */; };
 		FA8F0F56285FA01D00967BDD /* CurrencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F55285FA01D00967BDD /* CurrencyService.swift */; };
@@ -26,6 +25,8 @@
 		FA8F0F5C285FA4A000967BDD /* CurrencyViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F5B285FA4A000967BDD /* CurrencyViewModelTests.swift */; };
 		FA8F0F5E285FA64400967BDD /* TranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F5D285FA64400967BDD /* TranslationService.swift */; };
 		FA8F0F60285FA66C00967BDD /* Translation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F5F285FA66C00967BDD /* Translation.swift */; };
+		FA8F0F62285FA71C00967BDD /* TranslationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F61285FA71C00967BDD /* TranslationViewModel.swift */; };
+		FA8F0F64285FA79600967BDD /* TranslationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F63285FA79600967BDD /* TranslationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +60,6 @@
 		FA8F0F44285F9A4F00967BDD /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		FA8F0F46285F9A8000967BDD /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		FA8F0F4D285F9C8600967BDD /* CurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyView.swift; sourceTree = "<group>"; };
-		FA8F0F4F285F9CA300967BDD /* TranslateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateView.swift; sourceTree = "<group>"; };
 		FA8F0F51285F9CBC00967BDD /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		FA8F0F53285F9D0600967BDD /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		FA8F0F55285FA01D00967BDD /* CurrencyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyService.swift; sourceTree = "<group>"; };
@@ -68,6 +68,8 @@
 		FA8F0F5B285FA4A000967BDD /* CurrencyViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModelTests.swift; sourceTree = "<group>"; };
 		FA8F0F5D285FA64400967BDD /* TranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationService.swift; sourceTree = "<group>"; };
 		FA8F0F5F285FA66C00967BDD /* Translation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translation.swift; sourceTree = "<group>"; };
+		FA8F0F61285FA71C00967BDD /* TranslationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationViewModel.swift; sourceTree = "<group>"; };
+		FA8F0F63285FA79600967BDD /* TranslationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,7 +191,7 @@
 				FA8F0F4A285F9ACD00967BDD /* Utils */,
 				FA8F0F1A285F97F700967BDD /* ContentView.swift */,
 				FA8F0F4D285F9C8600967BDD /* CurrencyView.swift */,
-				FA8F0F4F285F9CA300967BDD /* TranslateView.swift */,
+				FA8F0F63285FA79600967BDD /* TranslationView.swift */,
 				FA8F0F51285F9CBC00967BDD /* WeatherView.swift */,
 			);
 			path = View;
@@ -207,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				FA8F0F59285FA13300967BDD /* CurrencyViewModel.swift */,
+				FA8F0F61285FA71C00967BDD /* TranslationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -351,7 +354,6 @@
 			files = (
 				FA8F0F1B285F97F700967BDD /* ContentView.swift in Sources */,
 				FA8F0F5A285FA13300967BDD /* CurrencyViewModel.swift in Sources */,
-				FA8F0F50285F9CA300967BDD /* TranslateView.swift in Sources */,
 				FA8F0F56285FA01D00967BDD /* CurrencyService.swift in Sources */,
 				FA8F0F4E285F9C8600967BDD /* CurrencyView.swift in Sources */,
 				FA8F0F60285FA66C00967BDD /* Translation.swift in Sources */,
@@ -359,6 +361,8 @@
 				FA8F0F19285F97F700967BDD /* BaluchonApp.swift in Sources */,
 				FA8F0F58285FA03F00967BDD /* Currency.swift in Sources */,
 				FA8F0F54285F9D0600967BDD /* LoaderView.swift in Sources */,
+				FA8F0F62285FA71C00967BDD /* TranslationViewModel.swift in Sources */,
+				FA8F0F64285FA79600967BDD /* TranslationView.swift in Sources */,
 				FA8F0F52285F9CBC00967BDD /* WeatherView.swift in Sources */,
 				FA8F0F45285F9A4F00967BDD /* ApiService.swift in Sources */,
 				FA8F0F5E285FA64400967BDD /* TranslationService.swift in Sources */,
