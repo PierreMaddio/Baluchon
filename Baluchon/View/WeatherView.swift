@@ -37,8 +37,9 @@ struct WeatherView: View {
                             
                             HStack {
                                 VStack(spacing: 20) {
-                                    Image(systemName: "sun.max")
-                                        .font(.system(size: 40))
+                                        Image("usa")
+                                        .resizable()
+                                        .frame(width: 100, height: 50)
                                 }
                                 .frame(width: 150, alignment: .leading)
                                 Text(String(format: "%0.f", $viewModel.cityTemperatureDestination.wrappedValue) + "°")
@@ -81,8 +82,9 @@ struct WeatherView: View {
                             
                             HStack {
                                 VStack(spacing: 20) {
-                                    Image(systemName: "sun.max")
-                                        .font(.system(size: 40))
+                                    Image("france")
+                                        .resizable()
+                                        .frame(width: 100, height: 50)
                                 }
                                 .frame(width: 150, alignment: .leading)
                                 Text(String(format: "%0.f", $viewModel.cityTemperatureOrigin.wrappedValue) + "°")
