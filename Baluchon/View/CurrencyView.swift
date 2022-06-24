@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct CurrencyView: View {
     @ObservedObject var viewModel: CurrencyViewModel
@@ -33,7 +34,13 @@ struct CurrencyView: View {
                         Form {
                             Section(header: Text("Convert a currency")) {
                                 TextField("Entrer an amount", text: $amount)
-                                    .keyboardType(.decimalPad)
+                                    .keyboardType(.numberPad)
+                                    .onReceive(Just(amount)) { newValue in
+                                                    let filtered = newValue.filter { "0123456789.".contains($0) }
+                                                    if filtered != newValue {
+                                                        self.amount = filtered
+                                                    }
+                                                }
                                 
                                 Picker(selection: $itemSelected, label: Text("FROM")) {
                                     ForEach(0 ..< currencies.count) { index in
