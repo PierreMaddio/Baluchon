@@ -13,18 +13,16 @@ class TranslationViewModel: ObservableObject {
     @Published var result: String = ""
     
     // service
-    let service: TranslationServiceProtocol?
-
-
+    private let service: TranslationServiceProtocol?
+    
     // Inject service translate
     init(service: Service) {
-        
         self.service = service as? TranslationServiceProtocol
     }
     
-    func fetchDataForTranslation(target: String, q: String) {
+    func fetchDataForTranslation(target: String, textToTranslate: String) {
         loaderIsVisible = true
-        self.service?.getTranslation(target: target, q: q, completion: { translation in
+        self.service?.getTranslation(target: target, query: textToTranslate, completion: { translation in
             if let translatedText = translation?.data?.translations?[0].translatedText {
                 DispatchQueue.main.async {
                     self.loaderIsVisible = false

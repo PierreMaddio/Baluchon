@@ -18,14 +18,14 @@ class WeatherViewModel: ObservableObject {
     @Published var cityWeatherDescriptionOrigin: String = ""
     
     // service
-    let service: WeatherServiceProtocol?
+    private let service: WeatherServiceProtocol?
     
     // Inject service weather
     init(service: Service) {
         self.service = service as? WeatherServiceProtocol
     }
     
-    private func fetchDataForCity(lat: String, lon: String, handler: @escaping (String, Double, String)-> (Void) ) {
+    func fetchDataForCity(lat: String, lon: String, handler: @escaping (String, Double, String)-> (Void) ) {
         loaderIsVisible = true
         self.service?.getWeather(lat: lat, lon: lon, completion: { weatherData in
             if let cityName = weatherData?.name,

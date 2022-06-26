@@ -29,7 +29,7 @@ struct TranslationView: View {
                 
                 Button("Translate") {
                     if !textToTranslate.isEmpty {
-                        viewModel.fetchDataForTranslation(target: "en", q: textToTranslate)
+                        viewModel.fetchDataForTranslation(target: "en", textToTranslate: textToTranslate)
                     }
                 }
                 .padding()

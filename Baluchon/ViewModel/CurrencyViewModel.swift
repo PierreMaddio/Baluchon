@@ -12,7 +12,7 @@ class CurrencyViewModel: ObservableObject {
     @Published var loaderIsError: Bool = false
     
     // service
-    let service: CurrencyServiceProtocol?
+    private let service: CurrencyServiceProtocol?
     
     // Inject service currency
     init(service: Service) {

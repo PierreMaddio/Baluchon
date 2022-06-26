@@ -30,6 +30,8 @@
 		FA8F0F66285FBA5500967BDD /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F65285FBA5500967BDD /* Weather.swift */; };
 		FA8F0F68285FBAC200967BDD /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F67285FBAC200967BDD /* WeatherService.swift */; };
 		FA8F0F6A285FBB4700967BDD /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F69285FBB4700967BDD /* WeatherViewModel.swift */; };
+		FACFFA182868515E0067ACE2 /* WeatherViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFFA172868515E0067ACE2 /* WeatherViewModelTests.swift */; };
+		FACFFA1A286851840067ACE2 /* TranslationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFFA19286851840067ACE2 /* TranslationViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,8 @@
 		FA8F0F65285FBA5500967BDD /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		FA8F0F67285FBAC200967BDD /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		FA8F0F69285FBB4700967BDD /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		FACFFA172868515E0067ACE2 /* WeatherViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModelTests.swift; sourceTree = "<group>"; };
+		FACFFA19286851840067ACE2 /* TranslationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +154,8 @@
 			children = (
 				FA8F0F29285F97F800967BDD /* BaluchonTests.swift */,
 				FA8F0F5B285FA4A000967BDD /* CurrencyViewModelTests.swift */,
+				FACFFA172868515E0067ACE2 /* WeatherViewModelTests.swift */,
+				FACFFA19286851840067ACE2 /* TranslationViewModelTests.swift */,
 			);
 			path = BaluchonTests;
 			sourceTree = "<group>";
@@ -385,8 +391,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FACFFA1A286851840067ACE2 /* TranslationViewModelTests.swift in Sources */,
 				FA8F0F2A285F97F800967BDD /* BaluchonTests.swift in Sources */,
 				FA8F0F5C285FA4A000967BDD /* CurrencyViewModelTests.swift in Sources */,
+				FACFFA182868515E0067ACE2 /* WeatherViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
