@@ -6,15 +6,22 @@
   
 */
 
-// CurrencyView
+// ContentView
 "tabBar_weather" = "Météo";
 "tabBar_currency" = "Devise";
 "tabBar_translate" = "Traduction";
-"section_1_title_currency" = "Convertir une devise";
+
+// CurrencyView
+"currency_section_1_title" = "Convertir une devise";
 "currency_from_title" = "DE";
 "currency_to_title" = "EN";
 "currency_amount_placeholder" = "Entrer un montant";
-
-// WeatherView
+"currency_section_2_title" = "Conversion";
+"currency_label_button" = "Convertir";
 
 // TranslationView
+"weather_section_1_title" = "Traduire";
+"weather_text_1_placeholder" = "Texte en français";
+"weather_label_button" = "Traduire";
+"weather_section_2_title" = "Traduction";
+"weather_text_2_placeholder" = "Traduction en anglais";

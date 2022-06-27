@@ -6,11 +6,23 @@
   
 */
 
+// ContentView
 "tabBar_weather" = "Weather";
 "tabBar_currency" = "Currency";
-"tabBar_translate" = "Translate";
-"section_1_title_currency" = "Convert a Currency";
+"tabBar_translate" = "Translation";
+
+// CurrencyView
+"currency_section_1_title" = "Convert a Currency";
 "currency_from_title" = "FROM";
 "currency_to_title" = "TO";
 "currency_amount_placeholder" = "Enter an amount";
+"currency_section_2_title" = "Conversion";
+"currency_label_button" = "Convert";
+
+// TranslationView
+"weather_section_1_title" = "Translate";
+"weather_text_1_placeholder" = "Text in french";
+"weather_label_button" = "Translate";
+"weather_section_2_title" = "Translation";
+"weather_text_2_placeholder" = "Translation in english";
 

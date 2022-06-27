@@ -37,7 +37,7 @@ struct CurrencyView: View {
                         Text("ERROR")
                     } else {
                         Form {
-                            Section(header: Text("section_1_title_currency")) {
+                            Section(header: Text("currency_section_1_title")) {
                                 TextField("currency_amount_placeholder", text: $amount)
                                     .keyboardType(.decimalPad)
                                 
@@ -56,7 +56,7 @@ struct CurrencyView: View {
                                 Text(result)
                             }
                             
-                            Button("Convert") {
+                            Button("currency_label_button") {
                                 convertData()
                             }
                             .padding()

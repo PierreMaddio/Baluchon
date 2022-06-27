@@ -20,15 +20,15 @@ struct TranslationView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("Translate")) {
-                    TextField("Text in french", text: $textToTranslate)
+                Section(header: Text("weather_section_1_title")) {
+                    TextField("weather_text_1_placeholder", text: $textToTranslate)
                         .lineLimit(4)
                         .multilineTextAlignment(.leading)
                         .frame(minWidth: 100, maxWidth: 200, minHeight: 100, maxHeight: .infinity, alignment: .topLeading)
                         .keyboardType(.default)
                 }
                 
-                Button("Translate") {
+                Button("weather_label_button") {
                     if !textToTranslate.isEmpty {
                         viewModel.fetchDataForTranslation(target: "en", textToTranslate: textToTranslate)
                        
@@ -50,8 +50,8 @@ struct TranslationView: View {
                     }
                 }
                 
-                Section(header: Text("Translation")) {
-                    TextField("Translation in english", text: $viewModel.result)
+                Section(header: Text("weather_section_2_title")) {
+                    TextField("weather_text_2_placeholder", text: $viewModel.result)
                         .lineLimit(4)
                         .multilineTextAlignment(.leading)
                         .frame(minWidth: 100, maxWidth: 200, minHeight: 100, maxHeight: .infinity, alignment: .topLeading)
