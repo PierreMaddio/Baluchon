@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol WeatherServiceProtocol: Service {
+protocol WeatherServiceProtocol {
     func getWeather(lat: String, lon: String, completion: @escaping (Weather?) -> (Void))
 }
 
 class WeatherService: ApiService, WeatherServiceProtocol {
-    
+    // func call API openweathermap, build url and make request
     func getWeather(lat: String, lon: String, completion: @escaping (Weather?) -> (Void)) {
         let urlPathStr = Path.BaseUrl.Openweathermap.path.rawValue + "?" + Path.Params.Openweathermap.lat.rawValue + "=" + lat + "&" + Path.Params.Openweathermap.lon.rawValue + "=" + lon + "&" + Constants.appID + "=" + Constants.apiKeyOpenWeathermap
         

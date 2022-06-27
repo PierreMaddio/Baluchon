@@ -78,7 +78,7 @@ class WeatherViewModelTests: XCTestCase {
     }
 }
 
-
+// mock to simulate the service to do viewModelTests
 class WeatherServiceMockSuccess: WeatherServiceProtocol {
     var getWeatherIsCalled = false
     

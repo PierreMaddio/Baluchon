@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol CurrencyServiceProtocol: Service {
+protocol CurrencyServiceProtocol {
     func convertExchange(to: String, from: String, amount: String, completion: @escaping (Currency?) -> (Void) )
 }
 
 class CurrencyService: ApiService, CurrencyServiceProtocol {
-
+    // func call API fixer, build url and make request
     func convertExchange(to: String, from: String, amount: String, completion: @escaping (Currency?) -> (Void) ) {
         let urlPathStr = Path.BaseUrl.Fixer.path.rawValue + "?" + Path.Params.Fixer.to.rawValue + "=" + to + "&" + Path.Params.Fixer.from.rawValue + "=" + from + "&" + Path.Params.Fixer.amount.rawValue + "=" + amount
 

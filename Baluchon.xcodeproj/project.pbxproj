@@ -15,7 +15,6 @@
 		FA8F0F34285F97F800967BDD /* BaluchonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F33285F97F800967BDD /* BaluchonUITests.swift */; };
 		FA8F0F36285F97F800967BDD /* BaluchonUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F35285F97F800967BDD /* BaluchonUITestsLaunchTests.swift */; };
 		FA8F0F45285F9A4F00967BDD /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F44285F9A4F00967BDD /* ApiService.swift */; };
-		FA8F0F47285F9A8000967BDD /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F46285F9A8000967BDD /* Service.swift */; };
 		FA8F0F4E285F9C8600967BDD /* CurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F4D285F9C8600967BDD /* CurrencyView.swift */; };
 		FA8F0F52285F9CBC00967BDD /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F51285F9CBC00967BDD /* WeatherView.swift */; };
 		FA8F0F54285F9D0600967BDD /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F53285F9D0600967BDD /* LoaderView.swift */; };
@@ -32,6 +31,7 @@
 		FA8F0F6A285FBB4700967BDD /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F69285FBB4700967BDD /* WeatherViewModel.swift */; };
 		FACFFA182868515E0067ACE2 /* WeatherViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFFA172868515E0067ACE2 /* WeatherViewModelTests.swift */; };
 		FACFFA1A286851840067ACE2 /* TranslationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFFA19286851840067ACE2 /* TranslationViewModelTests.swift */; };
+		FACFFA1D286A01E90067ACE2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FACFFA1F286A01E90067ACE2 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +63,6 @@
 		FA8F0F33285F97F800967BDD /* BaluchonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaluchonUITests.swift; sourceTree = "<group>"; };
 		FA8F0F35285F97F800967BDD /* BaluchonUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaluchonUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FA8F0F44285F9A4F00967BDD /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
-		FA8F0F46285F9A8000967BDD /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		FA8F0F4D285F9C8600967BDD /* CurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyView.swift; sourceTree = "<group>"; };
 		FA8F0F51285F9CBC00967BDD /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		FA8F0F53285F9D0600967BDD /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
@@ -80,6 +79,8 @@
 		FA8F0F69285FBB4700967BDD /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		FACFFA172868515E0067ACE2 /* WeatherViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModelTests.swift; sourceTree = "<group>"; };
 		FACFFA19286851840067ACE2 /* TranslationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationViewModelTests.swift; sourceTree = "<group>"; };
+		FACFFA1E286A01E90067ACE2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FACFFA20286A022B0067ACE2 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +138,7 @@
 				FA8F0F4B285F9AD800967BDD /* ViewModel */,
 				FA8F0F4C285F9AFA00967BDD /* Supporting Files */,
 				FA8F0F1E285F97F800967BDD /* Preview Content */,
+				FACFFA1F286A01E90067ACE2 /* Localizable.strings */,
 			);
 			path = Baluchon;
 			sourceTree = "<group>";
@@ -174,7 +176,6 @@
 			children = (
 				FA8F0F43285F9A1500967BDD /* Services */,
 				FA8F0F44285F9A4F00967BDD /* ApiService.swift */,
-				FA8F0F46285F9A8000967BDD /* Service.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -323,6 +324,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = FA8F0F0C285F97F700967BDD;
 			productRefGroup = FA8F0F16285F97F700967BDD /* Products */;
@@ -342,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA8F0F20285F97F800967BDD /* Preview Assets.xcassets in Resources */,
+				FACFFA1D286A01E90067ACE2 /* Localizable.strings in Resources */,
 				FA8F0F1D285F97F800967BDD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,7 +377,6 @@
 				FA8F0F4E285F9C8600967BDD /* CurrencyView.swift in Sources */,
 				FA8F0F66285FBA5500967BDD /* Weather.swift in Sources */,
 				FA8F0F60285FA66C00967BDD /* Translation.swift in Sources */,
-				FA8F0F47285F9A8000967BDD /* Service.swift in Sources */,
 				FA8F0F19285F97F700967BDD /* BaluchonApp.swift in Sources */,
 				FA8F0F58285FA03F00967BDD /* Currency.swift in Sources */,
 				FA8F0F54285F9D0600967BDD /* LoaderView.swift in Sources */,
@@ -422,11 +424,24 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		FACFFA1F286A01E90067ACE2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FACFFA1E286A01E90067ACE2 /* en */,
+				FACFFA20286A022B0067ACE2 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		FA8F0F37285F97F800967BDD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -487,6 +502,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

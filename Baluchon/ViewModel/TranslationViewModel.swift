@@ -17,25 +17,25 @@ class TranslationViewModel: ObservableObject {
     private let service: TranslationServiceProtocol?
     
     // Inject service translate
-    init(service: Service) {
-        self.service = service as? TranslationServiceProtocol
+    init(service: TranslationServiceProtocol) {
+        self.service = service 
     }
     
     func fetchDataForTranslation(target: String, textToTranslate: String) {
         loaderIsVisible = true
-        self.service?.getTranslation(target: target, query: textToTranslate, completion: { translation in
+        self.service?.getTranslation(target: target, query: textToTranslate, completion: { [weak self] translation in
             if let translatedText = translation?.data?.translations?[0].translatedText {
                 DispatchQueue.main.async {
-                    self.loaderIsVisible = false
-                    self.loaderIsError = false
-                    self.result = translatedText
+                    self?.loaderIsVisible = false
+                    self?.loaderIsError = false
+                    self?.result = translatedText
                 }
             } else {
                 DispatchQueue.main.async {
-                    self.loaderIsVisible = false
-                    self.loaderIsError = false
-                    self.result = ""
-                    self.showAlertError = true
+                    self?.loaderIsVisible = false
+                    self?.loaderIsError = false
+                    self?.result = ""
+                    self?.showAlertError = true
                 }
             }
         })

@@ -101,7 +101,7 @@ struct WeatherView: View {
                     Spacer()
                 }
                 .foregroundColor(.blue)
-                .navigationTitle(Text("Weather"))
+                .navigationTitle(Text("tabBar_weather"))
             }
         }.onAppear {
             fetchDataForNewYork()

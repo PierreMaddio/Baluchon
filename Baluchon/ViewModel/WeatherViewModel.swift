@@ -22,26 +22,27 @@ class WeatherViewModel: ObservableObject {
     private let service: WeatherServiceProtocol?
     
     // Inject service weather
-    init(service: Service) {
-        self.service = service as? WeatherServiceProtocol
+    init(service: WeatherServiceProtocol) {
+        self.service = service 
     }
     
+    // when using completion with @escaping: [weak self] to release the memory
     func fetchDataForCity(lat: String, lon: String, handler: @escaping (String, Double, String)-> (Void) ) {
         loaderIsVisible = true
-        self.service?.getWeather(lat: lat, lon: lon, completion: { weatherData in
+        self.service?.getWeather(lat: lat, lon: lon, completion: { [weak self] weatherData in
             if let cityName = weatherData?.name,
                let cityTemperature = weatherData?.main?.temp,
                let cityWeatherDescription = weatherData?.weather?[0].weatherDescription {
                 DispatchQueue.main.async {
-                    self.loaderIsVisible = false
-                    self.loaderIsError = false
+                    self?.loaderIsVisible = false
+                    self?.loaderIsError = false
                     handler(cityName, cityTemperature, cityWeatherDescription)
                 }
             } else {
                 DispatchQueue.main.async {
-                    self.loaderIsVisible = false
-                    self.loaderIsError = false
-                    self.showAlertError = true
+                    self?.loaderIsVisible = false
+                    self?.loaderIsError = false
+                    self?.showAlertError = true
                 }
             }
         })

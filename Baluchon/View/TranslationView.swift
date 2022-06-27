@@ -58,7 +58,7 @@ struct TranslationView: View {
                         .keyboardType(.default)
                 }
             }
-            .navigationTitle(Text("Translation"))
+            .navigationTitle(Text("tabBar_translate"))
             .foregroundColor(Color.blue)
         }
     }

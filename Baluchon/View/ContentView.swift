@@ -13,17 +13,17 @@ struct ContentView: View {
             CurrencyView(viewModel: .init(service: CurrencyService()))
                 .tabItem {
                     Image(systemName: "banknote")
-                    Text("Currency")
+                    Text("tabBar_currency")
                 }
             TranslationView(viewModel: .init(service: TranslationService()))
                 .tabItem {
                     Image(systemName: "person.2")
-                    Text("Translate")
+                    Text("tabBar_translate")
                 }
             WeatherView(viewModel: .init(service: WeatherService()))
                 .tabItem {
                     Image(systemName: "cloud.sun.fill")
-                    Text("Weather")
+                    Text("tabBar_weather")
                 }
         }
     }

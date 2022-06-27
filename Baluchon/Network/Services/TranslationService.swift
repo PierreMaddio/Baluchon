@@ -7,11 +7,12 @@
 
 import Foundation
 
-protocol TranslationServiceProtocol: Service {
+protocol TranslationServiceProtocol {
     func getTranslation(target: String, query: String, completion: @escaping (Translation?) -> (Void))
 }
 
 class TranslationService: ApiService, TranslationServiceProtocol {
+    // func call API google translate, build url and make request
     
     // .trimmingCharacters(in: .whitespacesAndNewlines) delete spaces at the beginning and at the end of the query
     // %20 equals to a space in a url and + = %20

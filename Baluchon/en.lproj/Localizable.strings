@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  Baluchon
+
+  Created by Pierre on 27/06/2022.
+  
+*/
+
+"tabBar_weather" = "Weather";
+"tabBar_currency" = "Currency";
+"tabBar_translate" = "Translate";
+"section_1_title_currency" = "Convert a Currency";
+"currency_from_title" = "FROM";
+"currency_to_title" = "TO";
+"currency_amount_placeholder" = "Enter an amount";
+

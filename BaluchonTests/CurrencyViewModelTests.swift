@@ -36,13 +36,13 @@ class CurrencyViewModelTests: XCTestCase {
 
             // Then
             XCTAssertTrue(mockCurrencyService.convertExchangeIsCalled)
-            XCTAssertTrue(viewModel.loaderIsVisible)
-            XCTAssertTrue(viewModel.loaderIsError)
+            XCTAssertFalse(viewModel.loaderIsVisible)
+            XCTAssertFalse(viewModel.loaderIsError)
         }
     }
 }
 
-
+// mock to simulate the service to do viewModelTests
 class CurrencyServiceMockSuccess: CurrencyServiceProtocol {
     var convertExchangeIsCalled = false
 

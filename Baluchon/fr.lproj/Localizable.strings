@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  Baluchon
+
+  Created by Pierre on 27/06/2022.
+  
+*/
+
+// CurrencyView
+"tabBar_weather" = "Météo";
+"tabBar_currency" = "Devise";
+"tabBar_translate" = "Traduction";
+"section_1_title_currency" = "Convertir une devise";
+"currency_from_title" = "DE";
+"currency_to_title" = "EN";
+"currency_amount_placeholder" = "Entrer un montant";
+
+// WeatherView
+
+// TranslationView

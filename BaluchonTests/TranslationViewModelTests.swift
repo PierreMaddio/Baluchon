@@ -39,12 +39,13 @@ class TranslationViewModelTests: XCTestCase {
             // Then
             XCTAssertTrue(mockTranslationService.getTranslationIsCalled)
             XCTAssertTrue(viewModel.result.isEmpty)
-            XCTAssertTrue(viewModel.loaderIsVisible)
-            XCTAssertTrue(viewModel.loaderIsError)
+            XCTAssertFalse(viewModel.loaderIsVisible)
+            XCTAssertFalse(viewModel.loaderIsError)
         }
     }
 }
 
+// mock to simulate the service to do viewModelTests
 class TranslationServiceMockSuccess: TranslationServiceProtocol {
     var getTranslationIsCalled = false
     

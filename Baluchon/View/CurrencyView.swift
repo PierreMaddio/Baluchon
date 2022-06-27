@@ -9,12 +9,15 @@ import SwiftUI
 import Combine
 
 struct CurrencyView: View {
+    // @ObservedObject to can accept @Published properties
+    // The ObservableObject conformance allows instances of this class to be used inside views, so that when important changes happen the view will reload.
     @ObservedObject var viewModel: CurrencyViewModel
     
     init(viewModel: CurrencyViewModel) {
         self.viewModel = viewModel
     }
     
+    // @State: local change
     @State private var showAlert = false
     @State private var showAlertError = false
     @State private var itemSelected = 0
@@ -34,16 +37,16 @@ struct CurrencyView: View {
                         Text("ERROR")
                     } else {
                         Form {
-                            Section(header: Text("Convert a currency")) {
-                                TextField("Entrer an amount", text: $amount)
+                            Section(header: Text("section_1_title_currency")) {
+                                TextField("currency_amount_placeholder", text: $amount)
                                     .keyboardType(.decimalPad)
                                 
-                                Picker(selection: $itemSelected, label: Text("FROM")) {
+                                Picker(selection: $itemSelected, label: Text("currency_from_title")) {
                                     ForEach(0 ..< currencies.count) { index in
                                         Text(self.currencies[index]).tag(index)
                                     }
                                 }
-                                Picker(selection: $itemSelected2, label: Text("TO")) {
+                                Picker(selection: $itemSelected2, label: Text("currency_to_title")) {
                                     ForEach(0 ..< currencies.count) { index in
                                         Text(self.currencies[index]).tag(index)
                                     }
@@ -68,7 +71,7 @@ struct CurrencyView: View {
                                 }
                             }
                         }
-                        .navigationTitle(Text("Currency"))
+                        .navigationTitle(Text("tabBar_currency"))
                         .foregroundColor(Color.blue)
                     }
                 }
