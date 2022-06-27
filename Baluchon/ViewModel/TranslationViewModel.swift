@@ -11,6 +11,7 @@ class TranslationViewModel: ObservableObject {
     @Published var loaderIsVisible: Bool = false
     @Published var loaderIsError: Bool = false
     @Published var result: String = ""
+    @Published var showAlertError = false
     
     // service
     private let service: TranslationServiceProtocol?
@@ -30,7 +31,12 @@ class TranslationViewModel: ObservableObject {
                     self.result = translatedText
                 }
             } else {
-                self.loaderIsError = true
+                DispatchQueue.main.async {
+                    self.loaderIsVisible = false
+                    self.loaderIsError = false
+                    self.result = ""
+                    self.showAlertError = true
+                }
             }
         })
     }

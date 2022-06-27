@@ -15,6 +15,8 @@ struct CurrencyView: View {
         self.viewModel = viewModel
     }
     
+    @State private var showAlert = false
+    @State private var showAlertError = false
     @State private var itemSelected = 0
     @State private var itemSelected2 = 1
     @State private var amount: String = ""
@@ -57,7 +59,14 @@ struct CurrencyView: View {
                             .padding()
                             .background(Color(red: 0, green: 0, blue: 0.5))
                             .clipShape(Capsule())
-                            
+                            .alert("Enter an amount", isPresented: $showAlert) {
+                                Button("Ok", role: .cancel) {
+                                }
+                            }
+                            .alert("Server error", isPresented: $showAlertError) {
+                                Button("Ok", role: .cancel) {
+                                }
+                            }
                         }
                         .navigationTitle(Text("Currency"))
                         .foregroundColor(Color.blue)
@@ -68,8 +77,18 @@ struct CurrencyView: View {
     }
     
     func convertData() {
-        viewModel.loadData(to: currencies[itemSelected2], from: currencies[itemSelected], amount: amount) { conversionResult in
-            self.result = conversionResult
+        if !amount.isEmpty {
+            viewModel.loadData(to: currencies[itemSelected2], from: currencies[itemSelected], amount: amount) { conversionResult in
+                if conversionResult.isEmpty {
+                    showAlertError = true
+                } else {
+                    self.result = conversionResult
+                }
+                
+            }
+        } else {
+            
+            showAlert = true
         }
     }
 }

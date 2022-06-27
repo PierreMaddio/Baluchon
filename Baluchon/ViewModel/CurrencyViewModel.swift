@@ -29,7 +29,11 @@ class CurrencyViewModel: ObservableObject {
                     completion("\(currency) \(to)")
                 }
             } else {
-                self.loaderIsError = true
+                DispatchQueue.main.async {
+                    self.loaderIsVisible = false
+                    self.loaderIsError = false
+                    completion("")
+                }
             }
         })
     }

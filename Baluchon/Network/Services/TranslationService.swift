@@ -31,6 +31,8 @@ class TranslationService: ApiService, TranslationServiceProtocol {
                     }
                     // success
                     completion(response)
+                } else {
+                    completion(nil)
                 }
             }
             task.resume()

@@ -28,6 +28,8 @@ class WeatherService: ApiService, WeatherServiceProtocol {
                     }
                     // success
                     completion(response)
+                } else {
+                    completion(nil)
                 }
             }
             task.resume()

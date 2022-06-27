@@ -29,6 +29,8 @@ class CurrencyService: ApiService, CurrencyServiceProtocol {
                     }
                     // success
                     completion(response)
+                } else {
+                    completion(nil)
                 }
             }
             task.resume()

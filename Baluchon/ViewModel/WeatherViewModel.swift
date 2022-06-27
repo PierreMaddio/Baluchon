@@ -16,6 +16,7 @@ class WeatherViewModel: ObservableObject {
     @Published var cityNameOrigin: String = ""
     @Published var cityTemperatureOrigin: Double = 0.0
     @Published var cityWeatherDescriptionOrigin: String = ""
+    @Published var showAlertError = false
     
     // service
     private let service: WeatherServiceProtocol?
@@ -37,7 +38,11 @@ class WeatherViewModel: ObservableObject {
                     handler(cityName, cityTemperature, cityWeatherDescription)
                 }
             } else {
-                self.loaderIsError = true
+                DispatchQueue.main.async {
+                    self.loaderIsVisible = false
+                    self.loaderIsError = false
+                    self.showAlertError = true
+                }
             }
         })
     }

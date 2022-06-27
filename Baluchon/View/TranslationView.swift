@@ -10,6 +10,7 @@ import SwiftUI
 struct TranslationView: View {
     @State private var textToTranslate = ""
     @State private var translatedText = ""
+    @State private var showAlert = false
     
     @ObservedObject var viewModel: TranslationViewModel
     
@@ -30,11 +31,24 @@ struct TranslationView: View {
                 Button("Translate") {
                     if !textToTranslate.isEmpty {
                         viewModel.fetchDataForTranslation(target: "en", textToTranslate: textToTranslate)
+                       
+                    } else {
+                        showAlert = true
                     }
                 }
                 .padding()
                 .background(Color(red: 0, green: 0, blue: 0.5))
                 .clipShape(Capsule())
+                .alert("Server Error", isPresented: $viewModel.showAlertError) {
+                    Button("Ok", role: .cancel) {
+                        
+                    }
+                }
+                .alert("Enter text", isPresented: $showAlert) {
+                    Button("Ok", role: .cancel) {
+                        
+                    }
+                }
                 
                 Section(header: Text("Translation")) {
                     TextField("Translation in english", text: $viewModel.result)

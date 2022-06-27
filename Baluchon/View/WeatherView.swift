@@ -37,13 +37,13 @@ struct WeatherView: View {
                             
                             HStack {
                                 VStack(spacing: 20) {
-                                        Image("usa")
+                                    Image("usa")
                                         .resizable()
                                         .frame(width: 100, height: 50)
                                 }
                                 .frame(width: 150, alignment: .leading)
                                 Text(String(format: "%0.f", $viewModel.cityTemperatureDestination.wrappedValue) + "°")
-
+                                
                                     .font(.system(size: 40))
                                     .fontWeight(.bold)
                                     .padding()
@@ -67,7 +67,7 @@ struct WeatherView: View {
                     .clipShape(Capsule())
                     
                     Spacer()
-
+                    
                     
                     HStack {
                         Spacer(minLength: 15)
@@ -106,6 +106,10 @@ struct WeatherView: View {
         }.onAppear {
             fetchDataForNewYork()
             fetchDataForParis()
+        }.alert("Service Error", isPresented: $viewModel.showAlertError) {
+            Button("Ok", role: .cancel) {
+                
+            }
         }
     }
     
