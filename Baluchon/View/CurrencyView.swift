@@ -62,11 +62,11 @@ struct CurrencyView: View {
                             .padding()
                             .background(Color(red: 0, green: 0, blue: 0.5))
                             .clipShape(Capsule())
-                            .alert("Enter an amount", isPresented: $showAlert) {
+                            .alert("currency_amount_alert", isPresented: $showAlert) {
                                 Button("Ok", role: .cancel) {
                                 }
                             }
-                            .alert("Server error", isPresented: $showAlertError) {
+                            .alert("currency_server_alert", isPresented: $showAlertError) {
                                 Button("Ok", role: .cancel) {
                                 }
                             }

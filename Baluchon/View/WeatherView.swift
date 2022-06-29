@@ -106,7 +106,7 @@ struct WeatherView: View {
         }.onAppear {
             fetchDataForNewYork()
             fetchDataForParis()
-        }.alert("Service Error", isPresented: $viewModel.showAlertError) {
+        }.alert("weather_server_alert", isPresented: $viewModel.showAlertError) {
             Button("Ok", role: .cancel) {
                 
             }

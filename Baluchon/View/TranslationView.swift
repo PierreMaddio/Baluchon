@@ -20,15 +20,15 @@ struct TranslationView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("weather_section_1_title")) {
-                    TextField("weather_text_1_placeholder", text: $textToTranslate)
+                Section(header: Text("translation_section_1_title")) {
+                    TextField("translation_text_1_placeholder", text: $textToTranslate)
                         .lineLimit(4)
                         .multilineTextAlignment(.leading)
                         .frame(minWidth: 100, maxWidth: 200, minHeight: 100, maxHeight: .infinity, alignment: .topLeading)
                         .keyboardType(.default)
                 }
                 
-                Button("weather_label_button") {
+                Button("translation_label_button") {
                     if !textToTranslate.isEmpty {
                         viewModel.fetchDataForTranslation(target: "en", textToTranslate: textToTranslate)
                        
@@ -39,19 +39,19 @@ struct TranslationView: View {
                 .padding()
                 .background(Color(red: 0, green: 0, blue: 0.5))
                 .clipShape(Capsule())
-                .alert("Server Error", isPresented: $viewModel.showAlertError) {
+                .alert("translation_server_alert", isPresented: $viewModel.showAlertError) {
                     Button("Ok", role: .cancel) {
                         
                     }
                 }
-                .alert("Enter text", isPresented: $showAlert) {
+                .alert("translation_text_alert", isPresented: $showAlert) {
                     Button("Ok", role: .cancel) {
                         
                     }
                 }
                 
-                Section(header: Text("weather_section_2_title")) {
-                    TextField("weather_text_2_placeholder", text: $viewModel.result)
+                Section(header: Text("translation_section_2_title")) {
+                    TextField("translation_text_2_placeholder", text: $viewModel.result)
                         .lineLimit(4)
                         .multilineTextAlignment(.leading)
                         .frame(minWidth: 100, maxWidth: 200, minHeight: 100, maxHeight: .infinity, alignment: .topLeading)

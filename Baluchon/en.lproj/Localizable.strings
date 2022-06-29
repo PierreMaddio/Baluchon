@@ -18,11 +18,18 @@
 "currency_amount_placeholder" = "Enter an amount";
 "currency_section_2_title" = "Conversion";
 "currency_label_button" = "Convert";
+"currency_amount_alert" = "Enter an amount";
+"currency_server_alert" = "Server error";
 
 // TranslationView
-"weather_section_1_title" = "Translate";
-"weather_text_1_placeholder" = "Text in french";
-"weather_label_button" = "Translate";
-"weather_section_2_title" = "Translation";
-"weather_text_2_placeholder" = "Translation in english";
+"translation_section_1_title" = "Translate";
+"translation_text_1_placeholder" = "Text in french";
+"translation_label_button" = "Translate";
+"translation_section_2_title" = "Translation";
+"translation_text_2_placeholder" = "Translation in english";
+"translation_text_alert" = "Enter a text";
+"translation_server_alert" = "Server error";
+
+// WeatherView
+"weather_server_alert" = "Server error";
 
