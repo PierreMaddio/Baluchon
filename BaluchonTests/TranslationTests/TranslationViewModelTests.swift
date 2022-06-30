@@ -10,7 +10,7 @@ import XCTest
 
 class TranslationViewModelTests: XCTestCase {
 
-    func testFetchDataForTranslation_success() throws {
+    func test_fetchDataForTranslation_success() throws {
         // Given
         let mockTranslationService = TranslationServiceMockSuccess()
         let viewModel = TranslationViewModel(service: mockTranslationService)
@@ -27,7 +27,7 @@ class TranslationViewModelTests: XCTestCase {
         }
     }
     
-    func testFetchDataForTranslation_failed() throws {
+    func test_fetchDataForTranslation_failed() throws {
         // Given
         let mockTranslationService = TranslationServiceMockFailed()
         let viewModel = TranslationViewModel(service: mockTranslationService)
@@ -42,29 +42,5 @@ class TranslationViewModelTests: XCTestCase {
             XCTAssertFalse(viewModel.loaderIsVisible)
             XCTAssertFalse(viewModel.loaderIsError)
         }
-    }
-}
-
-// mock to simulate the service to do viewModelTests
-class TranslationServiceMockSuccess: TranslationServiceProtocol {
-    var getTranslationIsCalled = false
-    
-    func getTranslation(target: String, query: String, completion: @escaping (Translation?) -> (Void)) {
-        getTranslationIsCalled = true
-        
-        let translation = Translation(data: .init(translations: [
-            .init(translatedText: "Bonjour", detectedSourceLanguage: "EN"),
-            .init(translatedText: "Merci", detectedSourceLanguage: "EN")
-        ]))
-        completion(translation)
-    }
-}
-
-class TranslationServiceMockFailed: TranslationServiceProtocol {
-    var getTranslationIsCalled = false
-    
-    func getTranslation(target: String, query: String, completion: @escaping (Translation?) -> (Void)) {
-        getTranslationIsCalled = true
-        completion(nil)
     }
 }
