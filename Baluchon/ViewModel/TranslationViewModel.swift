@@ -9,7 +9,6 @@ import Foundation
 
 class TranslationViewModel: ObservableObject {
     @Published var loaderIsVisible: Bool = false
-    @Published var loaderIsError: Bool = false
     @Published var result: String = ""
     @Published var showAlertError = false
     
@@ -27,13 +26,11 @@ class TranslationViewModel: ObservableObject {
             if let translatedText = translation?.data?.translations?[0].translatedText {
                 DispatchQueue.main.async {
                     self?.loaderIsVisible = false
-                    self?.loaderIsError = false
                     self?.result = translatedText
                 }
             } else {
                 DispatchQueue.main.async {
                     self?.loaderIsVisible = false
-                    self?.loaderIsError = false
                     self?.result = ""
                     self?.showAlertError = true
                 }

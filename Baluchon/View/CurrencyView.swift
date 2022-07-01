@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Combine
 
 struct CurrencyView: View {
     // @ObservedObject to can accept @Published properties
@@ -33,47 +32,41 @@ struct CurrencyView: View {
                     .frame(width: 80, height: 80)
             } else {
                 VStack {
-                    if viewModel.loaderIsError {
-                        Text("ERROR")
-                    } else {
-                        Form {
-                            Section(header: Text("currency_section_1_title")) {
-                                TextField("currency_amount_placeholder", text: $amount)
-                                    .keyboardType(.decimalPad)
-                                
-                                Picker(selection: $itemSelected, label: Text("currency_from_title")) {
-                                    ForEach(0 ..< currencies.count) { index in
-                                        Text(self.currencies[index]).tag(index)
-                                    }
-                                }
-                                Picker(selection: $itemSelected2, label: Text("currency_to_title")) {
-                                    ForEach(0 ..< currencies.count) { index in
-                                        Text(self.currencies[index]).tag(index)
-                                    }
-                                }
-                            }
-                            Section(header: Text("Conversion")) {
-                                Text(result)
-                            }
+                    Form {
+                        Section(header: Text("currency_section_1_title")) {
+                            TextField("currency_amount_placeholder", text: $amount)
+                                .keyboardType(.decimalPad)
                             
-                            Button("currency_label_button") {
-                                convertData()
-                            }
-                            .padding()
-                            .background(Color(red: 0, green: 0, blue: 0.5))
-                            .clipShape(Capsule())
-                            .alert("currency_amount_alert", isPresented: $showAlert) {
-                                Button("Ok", role: .cancel) {
+                            Picker(selection: $itemSelected, label: Text("currency_from_title")) {
+                                ForEach(0 ..< currencies.count) { index in
+                                    Text(self.currencies[index]).tag(index)
                                 }
                             }
-                            .alert("currency_server_alert", isPresented: $showAlertError) {
-                                Button("Ok", role: .cancel) {
+                            Picker(selection: $itemSelected2, label: Text("currency_to_title")) {
+                                ForEach(0 ..< currencies.count) { index in
+                                    Text(self.currencies[index]).tag(index)
                                 }
                             }
                         }
-                        .navigationTitle(Text("tabBar_currency"))
-                        .foregroundColor(Color.blue)
+                        Section(header: Text("Conversion")) {
+                            Text(result)
+                        }
+                        
+                        Button("currency_label_button") {
+                            convertData()
+                        }
+                        .padding()
+                        .background(Color(red: 0, green: 0, blue: 0.5))
+                        .clipShape(Capsule())
+                        .alert("currency_amount_alert", isPresented: $showAlert) {
+                            Button("Ok", role: .cancel) {}
+                        }
+                        .alert("currency_server_alert", isPresented: $showAlertError) {
+                            Button("Ok", role: .cancel) {}
+                        }
                     }
+                    .navigationTitle(Text("tabBar_currency"))
+                    .foregroundColor(Color.blue)
                 }
             }
         }
@@ -87,10 +80,8 @@ struct CurrencyView: View {
                 } else {
                     self.result = conversionResult
                 }
-                
             }
         } else {
-            
             showAlert = true
         }
     }

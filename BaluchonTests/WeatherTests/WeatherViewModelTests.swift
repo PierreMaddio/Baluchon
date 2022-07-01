@@ -19,7 +19,6 @@ class WeatherViewModelTests: XCTestCase {
             // Then
             XCTAssertTrue(mockWeatherService.getWeatherIsCalled)
             XCTAssertFalse(viewModel.loaderIsVisible)
-            XCTAssertFalse(viewModel.loaderIsError)
         }
     }
     
@@ -32,7 +31,6 @@ class WeatherViewModelTests: XCTestCase {
             // Then
             XCTAssertTrue(mockWeatherService.getWeatherIsCalled)
             XCTAssertTrue(viewModel.loaderIsVisible)
-            XCTAssertTrue(viewModel.loaderIsError)
         }
     }
     

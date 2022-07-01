@@ -23,7 +23,6 @@ class TranslationViewModelTests: XCTestCase {
             XCTAssertEqual(viewModel.result, "Bonjour")
             XCTAssertTrue(mockTranslationService.getTranslationIsCalled)
             XCTAssertFalse(viewModel.loaderIsVisible)
-            XCTAssertFalse(viewModel.loaderIsError)
         }
     }
     
@@ -40,7 +39,6 @@ class TranslationViewModelTests: XCTestCase {
             XCTAssertTrue(mockTranslationService.getTranslationIsCalled)
             XCTAssertTrue(viewModel.result.isEmpty)
             XCTAssertFalse(viewModel.loaderIsVisible)
-            XCTAssertFalse(viewModel.loaderIsError)
         }
     }
 }

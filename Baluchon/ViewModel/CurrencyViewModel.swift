@@ -10,7 +10,6 @@ import Foundation
 class CurrencyViewModel: ObservableObject {
     // @Published if the property change, it refresh directly in the view
     @Published var loaderIsVisible: Bool = false
-    @Published var loaderIsError: Bool = false
     
     // service
     private let service: CurrencyServiceProtocol?
@@ -26,13 +25,11 @@ class CurrencyViewModel: ObservableObject {
             if let currency = currencyExchange?.result {
                 DispatchQueue.main.async {
                     self?.loaderIsVisible = false
-                    self?.loaderIsError = false
                     completion("\(currency) \(to)")
                 }
             } else {
                 DispatchQueue.main.async {
                     self?.loaderIsVisible = false
-                    self?.loaderIsError = false
                     completion("")
                 }
             }

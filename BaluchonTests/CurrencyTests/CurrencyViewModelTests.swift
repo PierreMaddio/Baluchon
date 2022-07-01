@@ -21,7 +21,6 @@ class CurrencyViewModelTests: XCTestCase {
             // Then
             XCTAssertTrue(mockCurrencyService.convertExchangeIsCalled)
             XCTAssertFalse(viewModel.loaderIsVisible)
-            XCTAssertFalse(viewModel.loaderIsError)
         }
     }
 
@@ -35,7 +34,6 @@ class CurrencyViewModelTests: XCTestCase {
             // Then
             XCTAssertTrue(mockCurrencyService.convertExchangeIsCalled)
             XCTAssertFalse(viewModel.loaderIsVisible)
-            XCTAssertFalse(viewModel.loaderIsError)
         }
     }
 }

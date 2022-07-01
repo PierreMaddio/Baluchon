@@ -9,7 +9,6 @@ import Foundation
 
 class WeatherViewModel: ObservableObject {
     @Published var loaderIsVisible: Bool = false
-    @Published var loaderIsError: Bool = false
     @Published var cityNameDestination: String = ""
     @Published var cityTemperatureDestination: Double = 0.0
     @Published var cityWeatherDescriptionDestination: String = ""
@@ -35,13 +34,11 @@ class WeatherViewModel: ObservableObject {
                let cityWeatherDescription = weatherData?.weather?[0].weatherDescription {
                 DispatchQueue.main.async {
                     self?.loaderIsVisible = false
-                    self?.loaderIsError = false
                     handler(cityName, cityTemperature, cityWeatherDescription)
                 }
             } else {
                 DispatchQueue.main.async {
                     self?.loaderIsVisible = false
-                    self?.loaderIsError = false
                     self?.showAlertError = true
                 }
             }

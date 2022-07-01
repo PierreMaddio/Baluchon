@@ -19,47 +19,47 @@ struct TranslationView: View {
     }
     var body: some View {
         NavigationView {
-            Form {
-                Section(header: Text("translation_section_1_title")) {
-                    TextField("translation_text_1_placeholder", text: $textToTranslate)
-                        .lineLimit(4)
-                        .multilineTextAlignment(.leading)
-                        .frame(minWidth: 100, maxWidth: 200, minHeight: 100, maxHeight: .infinity, alignment: .topLeading)
-                        .keyboardType(.default)
-                }
-                
-                Button("translation_label_button") {
-                    if !textToTranslate.isEmpty {
-                        viewModel.fetchDataForTranslation(target: "en", textToTranslate: textToTranslate)
-                       
-                    } else {
-                        showAlert = true
+            if viewModel.loaderIsVisible {
+                LoaderView()
+                    .frame(width: 80, height: 80)
+            } else {
+                Form {
+                    Section(header: Text("translation_section_1_title")) {
+                        TextField("translation_text_1_placeholder", text: $textToTranslate)
+                            .lineLimit(4)
+                            .multilineTextAlignment(.leading)
+                            .frame(minWidth: 100, maxWidth: 200, minHeight: 100, maxHeight: .infinity, alignment: .topLeading)
+                            .keyboardType(.default)
+                    }
+                    
+                    Button("translation_label_button") {
+                        if !textToTranslate.isEmpty {
+                            viewModel.fetchDataForTranslation(target: "en", textToTranslate: textToTranslate)
+                        } else {
+                            showAlert = true
+                        }
+                    }
+                    .padding()
+                    .background(Color(red: 0, green: 0, blue: 0.5))
+                    .clipShape(Capsule())
+                    .alert("translation_server_alert", isPresented: $viewModel.showAlertError) {
+                        Button("Ok", role: .cancel) {}
+                    }
+                    .alert("translation_text_alert", isPresented: $showAlert) {
+                        Button("Ok", role: .cancel) {}
+                    }
+                    
+                    Section(header: Text("translation_section_2_title")) {
+                        TextField("translation_text_2_placeholder", text: $viewModel.result)
+                            .lineLimit(4)
+                            .multilineTextAlignment(.leading)
+                            .frame(minWidth: 100, maxWidth: 200, minHeight: 100, maxHeight: .infinity, alignment: .topLeading)
+                            .keyboardType(.default)
                     }
                 }
-                .padding()
-                .background(Color(red: 0, green: 0, blue: 0.5))
-                .clipShape(Capsule())
-                .alert("translation_server_alert", isPresented: $viewModel.showAlertError) {
-                    Button("Ok", role: .cancel) {
-                        
-                    }
-                }
-                .alert("translation_text_alert", isPresented: $showAlert) {
-                    Button("Ok", role: .cancel) {
-                        
-                    }
-                }
-                
-                Section(header: Text("translation_section_2_title")) {
-                    TextField("translation_text_2_placeholder", text: $viewModel.result)
-                        .lineLimit(4)
-                        .multilineTextAlignment(.leading)
-                        .frame(minWidth: 100, maxWidth: 200, minHeight: 100, maxHeight: .infinity, alignment: .topLeading)
-                        .keyboardType(.default)
-                }
+                .navigationTitle(Text("tabBar_translate"))
+                .foregroundColor(Color.blue)
             }
-            .navigationTitle(Text("tabBar_translate"))
-            .foregroundColor(Color.blue)
         }
     }
 }
