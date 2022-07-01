@@ -8,30 +8,27 @@
 import Foundation
 @testable import Baluchon
 
+//In the unit tests we can't mock the network service
+//So we use the protocols that are used to mock the network services
+
 // mock to simulate the service to do viewModelTests
 class CurrencyServiceMockSuccess: CurrencyServiceProtocol {
-    var convertExchangeIsCalled = false
-
     func convertExchange(to: String, from: String, amount: String, completion: @escaping (Currency?) -> (Void)) {
-        convertExchangeIsCalled = true
-        let currency = Currency(date: "",
+        let currency = Currency(date: "2022-07-01",
                  historical: "",
-                 info: .init(rate: 0.0,
-                             timestamp: 0),
-                 query: .init(amount: 0,
-                              from: "",
-                              to: ""),
-                 result: 0.0,
+                 info: .init(rate: 1.040658,
+                             timestamp: 1656680883),
+                 query: .init(amount: 10,
+                              from: "EUR",
+                              to: "USD"),
+                 result: 10.40658,
                  success: true)
         completion(currency)
     }
 }
 
 class CurrencyServiceMockFailed: CurrencyServiceProtocol {
-    var convertExchangeIsCalled = false
-
     func convertExchange(to: String, from: String, amount: String, completion: @escaping (Currency?) -> (Void)) {
-        convertExchangeIsCalled = true
         completion(nil)
     }
 }

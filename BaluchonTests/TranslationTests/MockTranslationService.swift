@@ -10,24 +10,17 @@ import Foundation
 
 // mock to simulate the service to do viewModelTests
 class TranslationServiceMockSuccess: TranslationServiceProtocol {
-    var getTranslationIsCalled = false
-    
     func getTranslation(target: String, query: String, completion: @escaping (Translation?) -> (Void)) {
-        getTranslationIsCalled = true
-        
         let translation = Translation(data: .init(translations: [
-            .init(translatedText: "Bonjour", detectedSourceLanguage: "EN"),
-            .init(translatedText: "Merci", detectedSourceLanguage: "EN")
+            .init(translatedText: "Hello", detectedSourceLanguage: "FR"),
+            .init(translatedText: "Welcome", detectedSourceLanguage: "FR")
         ]))
         completion(translation)
     }
 }
 
 class TranslationServiceMockFailed: TranslationServiceProtocol {
-    var getTranslationIsCalled = false
-    
     func getTranslation(target: String, query: String, completion: @escaping (Translation?) -> (Void)) {
-        getTranslationIsCalled = true
         completion(nil)
     }
 }

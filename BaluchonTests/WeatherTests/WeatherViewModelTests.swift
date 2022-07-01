@@ -17,7 +17,6 @@ class WeatherViewModelTests: XCTestCase {
         // When
         viewModel.fetchDataForCity(lat: String(48.856614), lon: String(2.3522219)) { string1, double1, string2 in
             // Then
-            XCTAssertTrue(mockWeatherService.getWeatherIsCalled)
             XCTAssertFalse(viewModel.loaderIsVisible)
         }
     }
@@ -29,7 +28,6 @@ class WeatherViewModelTests: XCTestCase {
         // When
         viewModel.fetchDataForCity(lat: String(48.856614), lon: String(2.3522219)) { string1, double1, string2 in
             // Then
-            XCTAssertTrue(mockWeatherService.getWeatherIsCalled)
             XCTAssertTrue(viewModel.loaderIsVisible)
         }
     }
