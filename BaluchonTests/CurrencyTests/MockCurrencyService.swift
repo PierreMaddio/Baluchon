@@ -14,14 +14,14 @@ import Foundation
 // mock to simulate the service to do viewModelTests
 class CurrencyServiceMockSuccess: CurrencyServiceProtocol {
     func convertExchange(to: String, from: String, amount: String, completion: @escaping (Currency?) -> (Void)) {
-        let currency = Currency(date: "2022-07-01",
+        let currency = Currency(date: "2022-07-03",
                  historical: "",
-                 info: .init(rate: 1.040658,
-                             timestamp: 1656680883),
-                 query: .init(amount: 10,
+                 info: .init(rate: 1.042857,
+                             timestamp: 1656858723),
+                 query: .init(amount: 20,
                               from: "EUR",
                               to: "USD"),
-                 result: 10.40658,
+                 result: 20.85714,
                  success: true)
         completion(currency)
     }

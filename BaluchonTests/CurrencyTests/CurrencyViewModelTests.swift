@@ -10,29 +10,31 @@ import XCTest
 
 
 class CurrencyViewModelTests: XCTestCase {
-
-    func test_loadData_success() throws {
+    
+    //    func test_loadData_success() throws {
+    //        // Given
+    //        let mockCurrencyService = CurrencyServiceMockSuccess()
+    //        let viewModel = CurrencyViewModel(service: mockCurrencyService)
+    //        // When
+    //        viewModel.loadData(to: "USD", from: "EUR", amount: "10") { str in
+    //            // Then
+    //            XCTAssertFalse(viewModel.loaderIsVisible)
+    //            XCTAssertEqual(viewModel.result, String(10.42857))
+    //        }
+    //    }
+    
+    func testGetConvertionFrom20EuroToDollarShouldGetConvertion() throws {
         // Given
         let mockCurrencyService = CurrencyServiceMockSuccess()
         let viewModel = CurrencyViewModel(service: mockCurrencyService)
         // When
-        viewModel.loadData(to: "USD", from: "EUR", amount: "10") { str in
+        viewModel.loadData(to: "USD", from: "EUR", amount: "20") { str in
             // Then
             XCTAssertFalse(viewModel.loaderIsVisible)
+            XCTAssertEqual(viewModel.result, String(20.85714))
         }
     }
     
-//    func testGetConvertionFrom10EuroToDollarShouldGetConvertion() throws {
-//        // Given
-//        let mockCurrencyService = CurrencyServiceMockSuccess()
-//        let viewModel = CurrencyViewModel(service: mockCurrencyService)
-//        // When
-//        viewModel.loadData(to: "USD", from: "EUR", amount: "10") { string in
-//            XCTAssertEqual(expression1: Equatable, expression2: Equatable)
-//            // Error: Protocol 'Equatable' as a type cannot conform to the protocol itself
-//        }
-//    }
-
     func test_loadData_failed() throws {
         // Given
         let mockCurrencyService = CurrencyServiceMockFailed()
