@@ -5,24 +5,23 @@
 //  Created by Pierre on 30/06/2022.
 //
 
-import Foundation
 @testable import Baluchon
 
 // mock to simulate the service to do viewModelTests
 class WeatherServiceMockSuccess: WeatherServiceProtocol {
     func getWeather(lat: String, lon: String, completion: @escaping (Weather?) -> (Void)) {
-        let weather = Weather(coord: .init(lon: 2.3522, lat: 48.8566),
+        let weather = Weather(coord: .init(lon: 2.3488, lat: 48.8534),
                               weather: [.init(id: 800, main: "clear", weatherDescription: "clear sky", icon: "01d")],
                               base: "stations",
-                              main: .init(temp: 288.24, feelsLike: 287.95, tempMin: 286.44, tempMax: 289.2, pressure: 1015, humidity: 82),
+                              main: .init(temp: 298.96, feelsLike: 298.64, tempMin: 297.8, tempMax: 300.9, pressure: 1025, humidity: 40),
                               visibility: 10000,
-                              wind: .init(speed: 1.03, deg: 0),
+                              wind: .init(speed: 5.14, deg: 310),
                               clouds: .init(all: 0),
-                              dt: 1656227700,
-                              sys: .init(type: 2, id: 2041230, message: 34.8, country: "FR", sunrise: 1656215305, sunset: 1656273493),
+                              dt: 1657116316,
+                              sys: .init(type: 2, id: 2041230, message: 34.8, country: "FR", sunrise: 1657079669, sunset: 1657137348),
                               timezone: 7200,
-                              id: 2978048,
-                              name: "Saint-Merri",
+                              id: 2988507,
+                              name: "Paris",
                               cod: 200)
         completion(weather)
     }

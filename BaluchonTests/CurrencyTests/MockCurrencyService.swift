@@ -5,7 +5,6 @@
 //  Created by Pierre on 30/06/2022.
 //
 
-import Foundation
 @testable import Baluchon
 
 //In the unit tests we can't mock the network service
@@ -14,14 +13,14 @@ import Foundation
 // mock to simulate the service to do viewModelTests
 class CurrencyServiceMockSuccess: CurrencyServiceProtocol {
     func convertExchange(to: String, from: String, amount: String, completion: @escaping (Currency?) -> (Void)) {
-        let currency = Currency(date: "2022-07-03",
+        let currency = Currency(date: "2022-07-06",
                  historical: "",
-                 info: .init(rate: 1.042857,
-                             timestamp: 1656858723),
+                 info: .init(rate: 1.017589,
+                             timestamp: 1657113036),
                  query: .init(amount: 20,
                               from: "EUR",
                               to: "USD"),
-                 result: 20.85714,
+                 result: 20.35178,
                  success: true)
         completion(currency)
     }

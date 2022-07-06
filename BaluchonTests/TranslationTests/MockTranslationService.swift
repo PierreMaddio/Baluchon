@@ -5,7 +5,6 @@
 //  Created by Pierre on 30/06/2022.
 //
 
-import Foundation
 @testable import Baluchon
 
 // mock to simulate the service to do viewModelTests
