@@ -9,7 +9,7 @@
 
 // mock to simulate the service to do viewModelTests
 class WeatherServiceMockSuccess: WeatherServiceProtocol {
-    func getWeather(lat: String, lon: String, completion: @escaping (Weather?) -> (Void)) {
+    func getWeather(latitude: String, longitude: String, completion: @escaping (Weather?) -> (Void)) {
         let weather = Weather(coord: .init(lon: 2.3488, lat: 48.8534),
                               weather: [.init(id: 800, main: "clear", weatherDescription: "clear sky", icon: "01d")],
                               base: "stations",
@@ -28,7 +28,7 @@ class WeatherServiceMockSuccess: WeatherServiceProtocol {
 }
 
 class WeatherServiceMockFailed: WeatherServiceProtocol {
-    func getWeather(lat: String, lon: String, completion: @escaping (Weather?) -> (Void)) {
+    func getWeather(latitude: String, longitude: String, completion: @escaping (Weather?) -> (Void)) {
         completion(nil)
     }
 }

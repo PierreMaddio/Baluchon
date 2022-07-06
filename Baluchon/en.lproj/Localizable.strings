@@ -29,6 +29,7 @@
 "translation_text_2_placeholder" = "Translation in english";
 "translation_text_alert" = "Enter a text";
 "translation_server_alert" = "Server error";
+"translation_server_alert_data" = "Invalid text";
 
 // WeatherView
 "weather_server_alert" = "Server error";

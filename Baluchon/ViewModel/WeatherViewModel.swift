@@ -28,7 +28,7 @@ class WeatherViewModel: ObservableObject {
     // when using completion with @escaping: [weak self] to release the memory
     func fetchDataForCity(lat: String, lon: String, handler: @escaping (String, Double, String)-> (Void) ) {
         loaderIsVisible = true
-        self.service?.getWeather(lat: lat, lon: lon, completion: { [weak self] weatherData in
+        self.service?.getWeather(latitude: lat, longitude: lon, completion: { [weak self] weatherData in
             if let cityName = weatherData?.name,
                let cityTemperature = weatherData?.main?.temp,
                let cityWeatherDescription = weatherData?.weather?[0].weatherDescription {

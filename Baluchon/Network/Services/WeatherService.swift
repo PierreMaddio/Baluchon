@@ -8,13 +8,13 @@
 import Foundation
 
 protocol WeatherServiceProtocol {
-    func getWeather(lat: String, lon: String, completion: @escaping (Weather?) -> (Void))
+    func getWeather(latitude: String, longitude: String, completion: @escaping (Weather?) -> (Void))
 }
 
 class WeatherService: ApiService, WeatherServiceProtocol {
     // func call API openweathermap, build url and make request
-    func getWeather(lat: String, lon: String, completion: @escaping (Weather?) -> (Void)) {
-        let urlPathStr = Path.BaseUrl.Openweathermap.path.rawValue + "?" + Path.Params.Openweathermap.lat.rawValue + "=" + lat + "&" + Path.Params.Openweathermap.lon.rawValue + "=" + lon + "&" + Constants.appID + "=" + Constants.apiKeyOpenWeathermap
+    func getWeather(latitude: String, longitude: String, completion: @escaping (Weather?) -> (Void)) {
+        let urlPathStr = Path.BaseUrl.Openweathermap.path.rawValue + "?" + Path.Params.Openweathermap.lat.rawValue + "=" + latitude + "&" + Path.Params.Openweathermap.lon.rawValue + "=" + longitude + "&" + Constants.appID + "=" + Constants.apiKeyOpenWeathermap
         
         if let url = URL(string: urlPathStr) {
             let requestURL = self.configureRequest(api: .openWeathermap, url: url, requestType: .get)

@@ -12,7 +12,7 @@
 
 // mock to simulate the service to do viewModelTests
 class CurrencyServiceMockSuccess: CurrencyServiceProtocol {
-    func convertExchange(to: String, from: String, amount: String, completion: @escaping (Currency?) -> (Void)) {
+    func convertExchange(to: String, from: String, amount: String, completion: @escaping (Currency?, ErrorBaluchon?) -> (Void)) {
         let currency = Currency(date: "2022-07-06",
                  historical: "",
                  info: .init(rate: 1.017589,
@@ -22,13 +22,13 @@ class CurrencyServiceMockSuccess: CurrencyServiceProtocol {
                               to: "USD"),
                  result: 20.35178,
                  success: true)
-        completion(currency)
+        completion(currency, nil)
     }
 }
 
 class CurrencyServiceMockFailed: CurrencyServiceProtocol {
-    func convertExchange(to: String, from: String, amount: String, completion: @escaping (Currency?) -> (Void)) {
-        completion(nil)
+    func convertExchange(to: String, from: String, amount: String, completion: @escaping (Currency?, ErrorBaluchon?) -> (Void)) {
+        completion(nil, .errorNetWork)
     }
 }
 

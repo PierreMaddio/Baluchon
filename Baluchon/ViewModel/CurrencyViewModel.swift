@@ -11,6 +11,7 @@ class CurrencyViewModel: ObservableObject {
     // @Published if the property change, it refresh directly in the view
     @Published var loaderIsVisible: Bool = false
     @Published var result: String = ""
+    @Published var showAlertErrorData = false
     
     // service
     private let service: CurrencyServiceProtocol?
@@ -22,7 +23,7 @@ class CurrencyViewModel: ObservableObject {
     
     func loadData(to: String, from: String, amount: String, completion: @escaping ((String) -> Void) ) {
         loaderIsVisible = true
-        self.service?.convertExchange(to: to, from: from, amount: amount, completion: { [weak self] currencyExchange in
+        self.service?.convertExchange(to: to, from: from, amount: amount, completion: { [weak self] currencyExchange, error in
             if let currency = currencyExchange?.result {
                 DispatchQueue.main.async {
                     self?.loaderIsVisible = false
@@ -32,7 +33,11 @@ class CurrencyViewModel: ObservableObject {
             } else {
                 DispatchQueue.main.async {
                     self?.loaderIsVisible = false
-                    completion("")
+                    if error == .errorData {
+                        self?.showAlertErrorData = true
+                    } else {
+                        completion("")
+                    }
                 }
             }
         })

@@ -48,6 +48,10 @@ struct TranslationView: View {
                     .alert("translation_text_alert", isPresented: $showAlert) {
                         Button("Ok", role: .cancel) {}
                     }
+                    .alert("translation_server_alert_data", isPresented: $viewModel.showAlertErrorData) {
+                        Button("Ok", role: .cancel) {}
+                    }
+
                     
                     Section(header: Text("translation_section_2_title")) {
                         TextField("translation_text_2_placeholder", text: $viewModel.result)

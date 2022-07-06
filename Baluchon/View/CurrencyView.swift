@@ -36,6 +36,7 @@ struct CurrencyView: View {
                         Section(header: Text("currency_section_1_title")) {
                             TextField("currency_amount_placeholder", text: $amount)
                                 .keyboardType(.decimalPad)
+                                .submitLabel(.done)
                             
                             Picker(selection: $itemSelected, label: Text("currency_from_title")) {
                                 ForEach(0 ..< currencies.count) { index in
@@ -62,6 +63,9 @@ struct CurrencyView: View {
                             Button("Ok", role: .cancel) {}
                         }
                         .alert("currency_server_alert", isPresented: $showAlertError) {
+                            Button("Ok", role: .cancel) {}
+                        }
+                        .alert("translation_server_alert_data", isPresented: $viewModel.showAlertErrorData) {
                             Button("Ok", role: .cancel) {}
                         }
                     }

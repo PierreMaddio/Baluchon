@@ -36,10 +36,12 @@ class WeatherViewModelTests: XCTestCase {
         // Given
         let mockWeatherService = WeatherServiceMockSuccess()
         let viewModel = WeatherViewModel(service: mockWeatherService)
+        
         // When
         viewModel.fetchDataForCityDestination(lat: String(48.8534), lon: String(2.3488))
         let exp = expectation(description: "test after 5 secondes")
         let result = XCTWaiter.wait(for: [exp], timeout: 5)
+        
         // Then
         if result == XCTWaiter.Result.timedOut {
             XCTAssertEqual(viewModel.cityNameDestination, "Paris")
@@ -63,23 +65,29 @@ class WeatherViewModelTests: XCTestCase {
         // Given
         let mockWeatherService = WeatherServiceMockSuccess()
         let viewModel = WeatherViewModel(service: mockWeatherService)
+        
         // When
         viewModel.fetchDataForCityDestination(lat: String(48.8534), lon: String(2.3488))
         let exp = expectation(description: "test after 5 secondes")
         let result = XCTWaiter.wait(for: [exp], timeout: 5)
+        
         // Then
         if result == XCTWaiter.Result.timedOut {
             XCTAssertEqual(viewModel.cityWeatherDescriptionDestination, "clear sky")
         }
     }
         
-    func test_kelvinsToCelsius() {
+    func testConvertionKelvinsToCelsiusSuccess() {
         // Given
         let mockWeatherService = WeatherServiceMockSuccess()
         let viewModel = WeatherViewModel(service: mockWeatherService)
+        
         //When
         let result = viewModel.kelvinsToCelsius(temperature: 288.24)
+        
+        // Then
         XCTAssertEqual(result, 15)
     }
+
 }
 

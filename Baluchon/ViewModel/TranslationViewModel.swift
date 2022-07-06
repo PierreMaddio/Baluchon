@@ -11,6 +11,7 @@ class TranslationViewModel: ObservableObject {
     @Published var loaderIsVisible: Bool = false
     @Published var result: String = ""
     @Published var showAlertError = false
+    @Published var showAlertErrorData = false
     
     // service
     private let service: TranslationServiceProtocol?
@@ -22,7 +23,7 @@ class TranslationViewModel: ObservableObject {
     
     func fetchDataForTranslation(target: String, textToTranslate: String) {
         loaderIsVisible = true
-        self.service?.getTranslation(target: target, query: textToTranslate, completion: { [weak self] translation in
+        self.service?.getTranslation(target: target, query: textToTranslate, completion: { [weak self] translation, error in
             if let translatedText = translation?.data?.translations?[0].translatedText {
                 DispatchQueue.main.async {
                     self?.loaderIsVisible = false
@@ -32,7 +33,11 @@ class TranslationViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self?.loaderIsVisible = false
                     self?.result = ""
-                    self?.showAlertError = true
+                    if error == .errorNetWork {
+                        self?.showAlertError = true
+                    } else {
+                        self?.showAlertErrorData = true
+                    }
                 }
             }
         })
