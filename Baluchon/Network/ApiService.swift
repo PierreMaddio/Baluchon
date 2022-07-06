@@ -27,7 +27,7 @@ open class ApiService {
         static let apiKeyOpenWeathermap = "074b276c5f07fc244358b814afab7bbf"
         
         static let keyGoogle = "key"
-        static let apiGoogleTranslate = "AIzaSyAEIm9kFV5fnrwDcibD40s-_wOo7qg1ArE"
+        static let apiGoogleTranslate = ""
     }
     
     enum RequestType {
