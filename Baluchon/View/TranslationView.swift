@@ -17,6 +17,7 @@ struct TranslationView: View {
     init(viewModel: TranslationViewModel) {
         self.viewModel = viewModel
     }
+    
     var body: some View {
         NavigationView {
             if viewModel.loaderIsVisible {
@@ -51,7 +52,7 @@ struct TranslationView: View {
                     .alert("translation_server_alert_data", isPresented: $viewModel.showAlertErrorData) {
                         Button("Ok", role: .cancel) {}
                     }
-
+                    
                     
                     Section(header: Text("translation_section_2_title")) {
                         TextField("translation_text_2_placeholder", text: $viewModel.result)
@@ -61,8 +62,7 @@ struct TranslationView: View {
                             .keyboardType(.default)
                     }
                 }
-                .navigationTitle(Text("tabBar_translate"))
-                .foregroundColor(Color.blue)
+                
             }
         }
     }
