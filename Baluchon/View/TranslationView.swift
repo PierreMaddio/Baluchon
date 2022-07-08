@@ -62,7 +62,7 @@ struct TranslationView: View {
                             .keyboardType(.default)
                     }
                 }
-                
+                .navigationTitle(Text("tabBar_translate"))
             }
         }
     }

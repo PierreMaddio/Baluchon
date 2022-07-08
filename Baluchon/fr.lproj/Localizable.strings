@@ -29,7 +29,7 @@
 "translation_text_2_placeholder" = "Traduction en anglais";
 "translation_text_alert" = "Entrer un texte";
 "translation_server_alert" = "Pas de connexion";
-"translation_server_alert_data" = "texte non valide";
+"translation_server_alert_data" = "Saisie invalide";
 
 // WeatherView
 "weather_server_alert" = "Pas de connexion";

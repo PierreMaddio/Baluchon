@@ -39,12 +39,12 @@ struct CurrencyView: View {
                                 .submitLabel(.done)
                             
                             Picker(selection: $itemSelected, label: Text("currency_from_title")) {
-                                ForEach(0 ..< currencies.count) { index in
+                                ForEach(0 ..< currencies.count, id: \.self) { index in
                                     Text(self.currencies[index]).tag(index)
                                 }
                             }
                             Picker(selection: $itemSelected2, label: Text("currency_to_title")) {
-                                ForEach(0 ..< currencies.count) { index in
+                                ForEach(0 ..< currencies.count, id: \.self) { index in
                                     Text(self.currencies[index]).tag(index)
                                 }
                             }
