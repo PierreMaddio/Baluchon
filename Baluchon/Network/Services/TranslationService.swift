@@ -12,11 +12,10 @@ protocol TranslationServiceProtocol {
 }
 
 class TranslationService: ApiService, TranslationServiceProtocol {
-    // func call API google translate, build url and make request
+    // call API google translate, build url and make request
     
     // .trimmingCharacters(in: .whitespacesAndNewlines) delete spaces at the beginning and at the end of the query
-    // %20 equals to a space in a url and + = %20
-    // replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil)
+    // in a url and + and %20 equals to a space 
     func getTranslation(target: String, query: String, completion: @escaping (Translation?, ErrorBaluchon?) -> (Void)) {
         let urlPathStr = Path.BaseUrl.GoogleTranslate.path.rawValue + "?" + Path.Params.GoogleTranslate.target.rawValue + "=" + target + "&" + Path.Params.GoogleTranslate.q.rawValue + "=" + query.trimmingCharacters(in: .whitespacesAndNewlines).replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil) + "&" + Constants.keyGoogle + "=" + Constants.apiGoogleTranslate
         

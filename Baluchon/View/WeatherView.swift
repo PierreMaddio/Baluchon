@@ -55,7 +55,6 @@ struct WeatherView: View {
                         Spacer(minLength: 15)
                     }
                     
-                    
                     Spacer()
                     
                     Button("Refresh") {
@@ -67,7 +66,6 @@ struct WeatherView: View {
                     .clipShape(Capsule())
                     
                     Spacer()
-                    
                     
                     HStack {
                         Spacer(minLength: 15)

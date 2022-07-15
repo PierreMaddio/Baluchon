@@ -21,7 +21,7 @@ open class ApiService {
         static let contentTypeJson = "application/json"
         
         static let apiKey = "apikey"
-        static let apiKeyFixer = "fwnt4RIn25TfKcqnqXfc5ghD2NcE99Ig"
+        static let apiKeyFixer = "CNQSfz5lOVWIo5wZmGu5TdL5zfD6QlHb"
         
         static let appID = "appid"
         static let apiKeyOpenWeathermap = "074b276c5f07fc244358b814afab7bbf"

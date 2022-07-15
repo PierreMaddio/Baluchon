@@ -10,28 +10,6 @@ import XCTest
 
 class WeatherViewModelTests: XCTestCase {
     
-//    func testWhenLatitudeAndLongitudeCorrespondToParisShouldGetResult() {
-//        // Given
-//        let mockWeatherService = WeatherServiceMockSuccess()
-//        let viewModel = WeatherViewModel(service: mockWeatherService)
-//        // When
-//        viewModel.fetchDataForCity(lat: String(48.8534), lon: String(2.3488)) { string1, double1, string2 in
-//            // Then
-//            XCTAssertEqual(viewModel.cityNameDestination, "Paris")
-//        }
-//    }
-//
-//    func test_fetchDataForCity_failed() {
-//        // Given
-//        let mockWeatherService = WeatherServiceMockFailed()
-//        let viewModel = WeatherViewModel(service: mockWeatherService)
-//        // When
-//        viewModel.fetchDataForCity(lat: String(48.856614), lon: String(2.3522219)) { string1, double1, string2 in
-//            // Then
-//            XCTAssertTrue(viewModel.loaderIsVisible)
-//        }
-//    }
-    
     func testWhenLatitudeAndLongitudeCorrespondToCityNameShouldGetResult() {
         // Given
         let mockWeatherService = WeatherServiceMockSuccess()

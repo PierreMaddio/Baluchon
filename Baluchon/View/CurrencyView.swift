@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct CurrencyView: View {
-    // @ObservedObject to can accept @Published properties
-    // The ObservableObject conformance allows instances of this class to be used inside views, so that when important changes happen the view will reload.
+    // @ObservedObject accept @Published properties
     @ObservedObject var viewModel: CurrencyViewModel
     
     init(viewModel: CurrencyViewModel) {
