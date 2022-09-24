@@ -15,7 +15,15 @@ class TranslationService: ApiService, TranslationServiceProtocol {
     // call API google translate, build url and make request
     
     // .trimmingCharacters(in: .whitespacesAndNewlines) delete spaces at the beginning and at the end of the query
-    // in a url and + and %20 equals to a space 
+    // in a url and + and %20 equals to a space
+    
+    // session to be used to make the API call
+    let session: URLSession
+    
+    init(urlSession: URLSession = .shared) {
+            self.session = urlSession
+        }
+    
     func getTranslation(target: String, query: String, completion: @escaping (Translation?, ErrorBaluchon?) -> (Void)) {
         let urlPathStr = Path.BaseUrl.GoogleTranslate.path.rawValue + "?" + Path.Params.GoogleTranslate.target.rawValue + "=" + target + "&" + Path.Params.GoogleTranslate.q.rawValue + "=" + query.trimmingCharacters(in: .whitespacesAndNewlines).replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil) + "&" + Constants.keyGoogle + "=" + Constants.apiGoogleTranslate
         

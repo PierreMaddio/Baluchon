@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA2A2B9728DB028400131B1C /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A2B9628DB028400131B1C /* MockURLProtocol.swift */; };
+		FA2A2B9928DB02BA00131B1C /* CurrencyServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A2B9828DB02BA00131B1C /* CurrencyServiceTests.swift */; };
+		FA8CBFDE28DF022A00CB3E5A /* TranslationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CBFDD28DF022A00CB3E5A /* TranslationServiceTests.swift */; };
+		FA8CBFE028DF0A9700CB3E5A /* WeatherServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CBFDF28DF0A9700CB3E5A /* WeatherServiceTests.swift */; };
 		FA8F0F19285F97F700967BDD /* BaluchonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F18285F97F700967BDD /* BaluchonApp.swift */; };
 		FA8F0F1B285F97F700967BDD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F0F1A285F97F700967BDD /* ContentView.swift */; };
 		FA8F0F1D285F97F800967BDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8F0F1C285F97F800967BDD /* Assets.xcassets */; };
@@ -54,6 +58,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA2A2B9628DB028400131B1C /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		FA2A2B9828DB02BA00131B1C /* CurrencyServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyServiceTests.swift; sourceTree = "<group>"; };
+		FA8CBFDD28DF022A00CB3E5A /* TranslationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationServiceTests.swift; sourceTree = "<group>"; };
+		FA8CBFDF28DF0A9700CB3E5A /* WeatherServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceTests.swift; sourceTree = "<group>"; };
 		FA8F0F15285F97F700967BDD /* Baluchon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Baluchon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8F0F18285F97F700967BDD /* BaluchonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaluchonApp.swift; sourceTree = "<group>"; };
 		FA8F0F1A285F97F700967BDD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -112,6 +120,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA2A2B9528DB022200131B1C /* ServiceTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA2A2B9628DB028400131B1C /* MockURLProtocol.swift */,
+				FA8CBFDF28DF0A9700CB3E5A /* WeatherServiceTests.swift */,
+				FA2A2B9828DB02BA00131B1C /* CurrencyServiceTests.swift */,
+				FA8CBFDD28DF022A00CB3E5A /* TranslationServiceTests.swift */,
+			);
+			path = ServiceTests;
+			sourceTree = "<group>";
+		};
 		FA8F0F0C285F97F700967BDD = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +177,7 @@
 		FA8F0F28285F97F800967BDD /* BaluchonTests */ = {
 			isa = PBXGroup;
 			children = (
+				FA2A2B9528DB022200131B1C /* ServiceTests */,
 				FAD2F0FE286E137A0005621E /* CurrencyTests */,
 				FAD2F0FD286E136D0005621E /* WeatherTests */,
 				FAD2F0FC286E13550005621E /* TranslationTests */,
@@ -423,9 +443,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA2A2B9928DB02BA00131B1C /* CurrencyServiceTests.swift in Sources */,
+				FA2A2B9728DB028400131B1C /* MockURLProtocol.swift in Sources */,
 				FACFFA1A286851840067ACE2 /* TranslationViewModelTests.swift in Sources */,
 				FA8F0F5C285FA4A000967BDD /* CurrencyViewModelTests.swift in Sources */,
+				FA8CBFDE28DF022A00CB3E5A /* TranslationServiceTests.swift in Sources */,
 				FAD2F100286E16450005621E /* MockCurrencyService.swift in Sources */,
+				FA8CBFE028DF0A9700CB3E5A /* WeatherServiceTests.swift in Sources */,
 				FAD2F104286E17010005621E /* MockTranslationService.swift in Sources */,
 				FACFFA182868515E0067ACE2 /* WeatherViewModelTests.swift in Sources */,
 				FAD2F102286E16B10005621E /* MockWeatherService.swift in Sources */,

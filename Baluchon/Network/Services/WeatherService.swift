@@ -13,6 +13,14 @@ protocol WeatherServiceProtocol {
 
 class WeatherService: ApiService, WeatherServiceProtocol {
     // func call API openweathermap, build url and make request
+    
+    // session to be used to make the API call
+    let session: URLSession
+    
+    init(urlSession: URLSession = .shared) {
+            self.session = urlSession
+        }
+    
     func getWeather(latitude: String, longitude: String, completion: @escaping (Weather?) -> (Void)) {
         let urlPathStr = Path.BaseUrl.Openweathermap.path.rawValue + "?" + Path.Params.Openweathermap.lat.rawValue + "=" + latitude + "&" + Path.Params.Openweathermap.lon.rawValue + "=" + longitude + "&" + Constants.appID + "=" + Constants.apiKeyOpenWeathermap
         
